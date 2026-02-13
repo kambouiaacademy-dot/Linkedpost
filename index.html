@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINKEDPost - Générez des posts LinkedIn impactants avec l'IA</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ============================================ -->
+    <!-- LANDING PAGE -->
+    <!-- ============================================ -->
+    <div id="landingPage" class="page active">
+        
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Transformez la description de votre entreprise en contenu LinkedIn impactant grâce à l'IA</h1>
+                <p class="hero-subtitle">Générez des posts professionnels, engageants et stratégiques en quelques secondes.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="showPage('signup')">Créer mon premier Post</button>
+                    <button class="btn btn-secondary" onclick="showPage('login')">Se connecter</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card">
+                    <i class="fas fa-linkedin"></i>
+                    <span>Posts IA</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMMENT ÇA MARCHE -->
+        <section class="how-it-works">
+            <h2 class="section-title">Comment ça marche ?</h2>
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <h3>1. Décrivez votre activité</h3>
+                    <p>Partagez simplement ce que fait votre entreprise et vos objectifs</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3>2. Choisissez un style</h3>
+                    <p>Sélectionnez le ton qui correspond à votre marque</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3>3. Générez votre Post</h3>
+                    <p>L'IA crée un post optimisé et prêt à publier</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AVANTAGES -->
+        <section class="benefits">
+            <h2 class="section-title">Pourquoi choisir LINKEDPost ?</h2>
+            <div class="benefits-container">
+                <div class="benefit-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Visibilité maximale</h3>
+                    <p>Des posts optimisés pour l'algorithme LinkedIn et votre audience</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Gain de temps</h3>
+                    <p>Créez en quelques secondes ce qui vous prenait des heures</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Autorité renforcée</h3>
+                    <p>Positionnez-vous comme expert dans votre domaine</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TÉMOIGNAGES -->
+        <section class="testimonials">
+            <h2 class="section-title">Ils ont transformé leur présence LinkedIn</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <img src="https://i.pravatar.cc/150?img=12" alt="Sophie Martin">
+                    <p class="testimonial-text">"LINKEDPost a complètement changé ma stratégie de contenu. Mes posts génèrent 3x plus d'engagement !"</p>
+                    <h4>Sophie Martin</h4>
+                    <span>CEO, TechInnovate</span>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://i.pravatar.cc/150?img=33" alt="Marc Dubois">
+                    <p class="testimonial-text">"Je gagne un temps précieux tout en maintenant une présence authentique et professionnelle."</p>
+                    <h4>Marc Dubois</h4>
+                    <span>Fondateur, GreenStart</span>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://i.pravatar.cc/150?img=45" alt="Laura Chen">
+                    <p class="testimonial-text">"L'IA comprend parfaitement mon secteur et génère du contenu pertinent à chaque fois."</p>
+                    <h4>Laura Chen</h4>
+                    <span>Directrice Marketing, FinanceUp</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LINKEDPost</h3>
+                    <p>La solution IA pour vos posts LinkedIn</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens utiles</h4>
+                    <ul>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">CGU</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>contact@linkedpost.io</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LINKEDPost. Tous droits réservés.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- ============================================ -->
+    <!-- PAGE INSCRIPTION -->
+    <!-- ============================================ -->
+    <div id="signup" class="page auth-page">
+        <div class="auth-container">
+            <div class="auth-card">
+                <h2>Créer un compte</h2>
+                <p class="auth-subtitle">Commencez à générer vos posts LinkedIn</p>
+                <form id="signupForm" onsubmit="handleSignup(event)">
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" required placeholder="votre@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Mot de passe</label>
+                        <input type="password" id="signup-password" required placeholder="Min. 6 caractères" minlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-name">Nom complet</label>
+                        <input type="text" id="signup-name" required placeholder="Votre nom">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Créer mon compte</button>
+                </form>
+                <p class="auth-switch">Déjà inscrit ? <a href="#" onclick="showPage('login')">Se connecter</a></p>
+                <button class="btn-back" onclick="showPage('landingPage')"><i class="fas fa-arrow-left"></i> Retour</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- PAGE CONNEXION -->
+    <!-- ============================================ -->
+    <div id="login" class="page auth-page">
+        <div class="auth-container">
+            <div class="auth-card">
+                <h2>Connexion</h2>
+                <p class="auth-subtitle">Accédez à votre espace</p>
+                <form id="loginForm" onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" required placeholder="votre@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Mot de passe</label>
+                        <input type="password" id="login-password" required placeholder="Votre mot de passe">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Se connecter</button>
+                </form>
+                <p class="auth-switch">Pas encore de compte ? <a href="#" onclick="showPage('signup')">S'inscrire</a></p>
+                <button class="btn-back" onclick="showPage('landingPage')"><i class="fas fa-arrow-left"></i> Retour</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- DASHBOARD UTILISATEUR -->
+    <!-- ============================================ -->
+    <div id="dashboard" class="page dashboard-page">
+        
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-linkedin"></i> LINKEDPost</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <button class="nav-item active" onclick="showDashboardTab('create')">
+                    <i class="fas fa-plus-circle"></i> Créer un Post
+                </button>
+                <button class="nav-item" onclick="showDashboardTab('posts')">
+                    <i class="fas fa-list"></i> Mes Posts
+                </button>
+                <button class="nav-item logout-btn" onclick="handleLogout()">
+                    <i class="fas fa-sign-out-alt"></i> Déconnexion
+                </button>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            
+            <!-- TOPBAR -->
+            <div class="topbar">
+                <div class="topbar-left">
+                    <h1 id="dashboardTitle">Créer un nouveau post</h1>
+                </div>
+                <div class="topbar-right">
+                    <span class="user-name" id="userName">Utilisateur</span>
+                    <span class="badge-ai">IA Powered</span>
+                    <span class="current-date" id="currentDate"></span>
+                </div>
+            </div>
+
+            <!-- ONGLET : CRÉER UN POST -->
+            <div id="createTab" class="tab-content active">
+                <div class="create-container">
+                    
+                    <!-- FORMULAIRE -->
+                    <div class="form-card">
+                        <h3><i class="fas fa-edit"></i> Informations du post</h3>
+                        <form id="postForm">
+                            <div class="form-group">
+                                <label for="companyName">Nom de l'entreprise</label>
+                                <input type="text" id="companyName" required placeholder="Ex: TechInnovate">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="companyDescription">Que fait votre entreprise ?</label>
+                                <textarea id="companyDescription" required rows="4" placeholder="Décrivez votre activité, votre mission, vos services..."></textarea>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="targetAudience">À qui vous adressez-vous ?</label>
+                                    <select id="targetAudience" required>
+                                        <option value="">Sélectionnez...</option>
+                                        <option value="Freelancers">Freelancers</option>
+                                        <option value="PME">PME</option>
+                                        <option value="Grandes entreprises">Grandes entreprises</option>
+                                        <option value="Grand Public">Grand Public</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="sector">Secteur d'activité</label>
+                                    <input type="text" id="sector" required placeholder="Ex: SaaS, Finance, Marketing...">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="communicationStyle">Style de communication</label>
+                                    <select id="communicationStyle" required>
+                                        <option value="">Sélectionnez...</option>
+                                        <option value="Expert">Expert</option>
+                                        <option value="Accessible">Accessible</option>
+                                        <option value="Vendeur">Vendeur</option>
+                                        <option value="Inspirant">Inspirant</option>
+                                        <option value="Engagé">Engagé</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="postObjective">Objectif du post</label>
+                                    <select id="postObjective" required>
+                                        <option value="">Sélectionnez...</option>
+                                        <option value="Notoriété">Notoriété</option>
+                                        <option value="Prospection">Prospection</option>
+                                        <option value="Recrutement">Recrutement</option>
+                                        <option value="Lancement">Lancement produit/service</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="postLength">Longueur souhaitée</label>
+                                <select id="postLength" required>
+                                    <option value="">Sélectionnez...</option>
+                                    <option value="Court">Court (100-150 mots)</option>
+                                    <option value="Moyen">Moyen (150-250 mots)</option>
+                                    <option value="Long">Long (250-400 mots)</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-generate">
+                                <i class="fas fa-magic"></i> Générer le Post
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- RÉSULTAT -->
+                    <div id="resultSection" class="result-section" style="display: none;">
+                        
+                        <!-- POST GÉNÉRÉ -->
+                        <div class="result-card">
+                            <h3><i class="fas fa-file-alt"></i> Votre post LinkedIn</h3>
+                            <div class="post-preview">
+                                <textarea id="generatedPost" rows="12"></textarea>
+                            </div>
+                            <div class="post-actions">
+                                <button class="btn btn-secondary" onclick="editPost()">
+                                    <i class="fas fa-edit"></i> Modifier
+                                </button>
+                                <button class="btn btn-success" onclick="savePost()">
+                                    <i class="fas fa-save"></i> Enregistrer
+                                </button>
+                                <button class="btn btn-primary" onclick="regeneratePost()">
+                                    <i class="fas fa-sync-alt"></i> Régénérer
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- ESTIMATION DE PERFORMANCE -->
+                        <div class="performance-card">
+                            <h3><i class="fas fa-chart-line"></i> Estimation de performance IA</h3>
+                            
+                            <div class="score-circle">
+                                <svg width="150" height="150">
+                                    <circle cx="75" cy="75" r="65" class="score-bg"></circle>
+                                    <circle cx="75" cy="75" r="65" class="score-progress" id="scoreCircle"></circle>
+                                </svg>
+                                <div class="score-value" id="scoreValue">0</div>
+                            </div>
+
+                            <div class="metrics">
+                                <div class="metric">
+                                    <label>Engagement</label>
+                                    <div class="metric-bar">
+                                        <div class="metric-fill" id="engagementBar"></div>
+                                    </div>
+                                    <span id="engagementScore">0%</span>
+                                </div>
+                                <div class="metric">
+                                    <label>Clarté</label>
+                                    <div class="metric-bar">
+                                        <div class="metric-fill" id="clarityBar"></div>
+                                    </div>
+                                    <span id="clarityScore">0%</span>
+                                </div>
+                                <div class="metric">
+                                    <label>Viralité</label>
+                                    <div class="metric-bar">
+                                        <div class="metric-fill" id="viralityBar"></div>
+                                    </div>
+                                    <span id="viralityScore">0%</span>
+                                </div>
+                            </div>
+
+                            <div class="recommendation">
+                                <h4>Recommandation stratégique</h4>
+                                <p id="recommendationText"></p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ONGLET : MES POSTS -->
+            <div id="postsTab" class="tab-content">
+                <div class="posts-container">
+                    <div class="posts-header">
+                        <h3><i class="fas fa-list"></i> Mes posts enregistrés</h3>
+                        <span class="posts-count" id="postsCount">0 post(s)</span>
+                    </div>
+                    <div id="postsList" class="posts-list">
+                        <!-- Les posts seront chargés dynamiquement -->
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- LOADING OVERLAY -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="spinner"></div>
+        <p>Génération du post en cours...</p>
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
